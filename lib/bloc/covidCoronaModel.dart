@@ -1,7 +1,5 @@
 
 import 'dart:convert';
-import 'dart:async';
-import 'dart:convert';
 import 'package:intl/intl.dart';
 
 List<CovidCoromaModelClass> coronaDataFromJson(String str) => List<CovidCoromaModelClass>.from(json.decode(str).map((x) => CovidCoromaModelClass.fromJson(x)));
@@ -12,6 +10,7 @@ class CovidCoromaModelClass{
   final confirmed;
   final recovered;
   final deaths;
+  final countryRegion;
 
   static var formate = new DateFormat.yMMMMd("en_US").add_jm();
 
@@ -19,13 +18,14 @@ class CovidCoromaModelClass{
       new DateTime.fromMicrosecondsSinceEpoch(
           lastUpdate * 1000));
 
-  CovidCoromaModelClass({this.lastUpdate, this.confirmed, this.recovered, this.deaths});
+  CovidCoromaModelClass({this.lastUpdate, this.confirmed, this.recovered, this.deaths, this.countryRegion});
 
   factory CovidCoromaModelClass.fromJson(Map<String, dynamic> json) => CovidCoromaModelClass(
     lastUpdate: json["lastUpdate"],
     confirmed: json["confirmed"],
     recovered: json["recovered"],
     deaths: json["deaths"],
+    countryRegion: json["countryRegion"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -33,5 +33,6 @@ class CovidCoromaModelClass{
     "confirmed": confirmed,
     "recovered": recovered,
     "deaths": deaths,
+    "countryRegion": countryRegion,
   };
 }

@@ -167,7 +167,7 @@ class ShowData extends StatelessWidget {
                         style: kTitleTextstyle,
                       ),
                       TextSpan(
-                        text: "Newest update: ${coronaData.getDate}",
+                        text: " ${coronaData.getDate}",
                         style: TextStyle(
                           color: kTextLightColor,
                         ),
@@ -177,9 +177,10 @@ class ShowData extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  "See details",
+                  "${coronaData.countryRegion}",
                   style: TextStyle(
                     color: kPrimaryColor,
+                    fontSize: 22,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
