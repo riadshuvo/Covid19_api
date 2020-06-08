@@ -10,6 +10,7 @@ class CovidCoronaRepoClass{
       String url = "https://corona.lmao.ninja/v2/countries/$country";
      try{
        final responses = await http.get(url);
+
        if(responses.statusCode== 200){
 
          return parsedJson(responses.body);

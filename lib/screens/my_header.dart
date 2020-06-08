@@ -1,5 +1,5 @@
 import 'package:corona_covid19_api/constant.dart';
-import 'package:corona_covid19_api/info_screen.dart';
+import 'package:corona_covid19_api/screens/info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
