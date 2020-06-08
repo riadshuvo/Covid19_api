@@ -30,12 +30,13 @@ class CovidCoronaState extends Equatable {
 
 
 class CoronaDataIsLoading extends CovidCoronaState {}
+
 class CoronaDataIsNotSearched extends CovidCoronaState {}
 
 class CoronaDataIsLoaded extends CovidCoronaState {
   final _currentCoronaData;
   CoronaDataIsLoaded(this._currentCoronaData);
-  List<CovidCoromaModelClass> get currentCoronaData => _currentCoronaData;
+  CovidCoromaModelClass get currentCoronaData => _currentCoronaData;
   @override
   // TODO: implement props
   List<Object> get props => [_currentCoronaData];
@@ -56,7 +57,7 @@ class CovidCoronaBloc extends Bloc<CovidCoronaEvent,CovidCoronaState>{
     if(event is FetchCoronaData){
       yield CoronaDataIsLoading();
       try{
-        List<CovidCoromaModelClass> getCoronaData = await coronaRepo.getCoronaData(event._currenData);
+        CovidCoromaModelClass getCoronaData = await coronaRepo.getCoronaData(event._currenData);
         yield CoronaDataIsLoaded(getCoronaData);
         
       }catch(_){
