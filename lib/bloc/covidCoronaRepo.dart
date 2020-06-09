@@ -8,20 +8,15 @@ class CovidCoronaRepoClass{
    Future<CovidCoromaModelClass> getCoronaData(String country) async{
      //String url='https://covid19.mathdro.id/api/countries/$country/confirmed';
       String url = "https://corona.lmao.ninja/v2/countries/$country";
-     try{
+
        final responses = await http.get(url);
 
-       if(responses.statusCode== 200){
+       if(responses.statusCode != 200){
+         throw Exception();
 
+       }
          return parsedJson(responses.body);
-       }
-       else{
-         return CovidCoromaModelClass();
-       }
-     }
-     catch (e){
-       return CovidCoromaModelClass();
-     }
+
   }
 
    CovidCoromaModelClass parsedJson(final response) {

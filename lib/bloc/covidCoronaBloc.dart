@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:corona_covid19_api/bloc/covidCoronaModel.dart';
 import 'package:corona_covid19_api/bloc/covidCoronaRepo.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class CovidCoronaEvent extends Equatable {
@@ -73,4 +74,6 @@ class CovidCoronaBloc extends Bloc<CovidCoronaEvent, CovidCoronaState> {
       yield CoronaDataIsNotSearched();
     }
   }
+
+
 }
