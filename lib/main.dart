@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -33,5 +34,3 @@ class MyApp extends StatelessWidget {
             )));
   }
 }
-
-

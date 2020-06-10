@@ -29,8 +29,8 @@ dependencies:
   equatable: ^0.6.1
   flutter_svg: ^0.17.4
   data_connection_checker: ^0.3.4
-  fluttertoast: ^4.0.1
   double_back_to_close_app: ^1.2.0
+  connectivity: ^0.4.8+6
 
 
 
